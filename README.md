@@ -14,3 +14,7 @@ echo $'*\t-fstype=cifs,user=${user},pass=${pass},domain=${domain},uid=${uid},gid
 ```
 
 For background run of automount is used own entrypoint.sh
+
+##docker run
+`docker run --rm -it --cap-add ALL autofs_docker_example bash`
+To mount a FUSE based filesystem, you need set right --cap-add (https://docs.docker.com/engine/reference/run/#/runtime-privilege-and-linux-capabilities)
