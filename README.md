@@ -10,7 +10,7 @@ The most important part is install `autofs` and `cifs-utils` packages and config
 ```
 echo -e "+auto.master\n/net\t/etc/auto.cifs\t--timeout 60" > /etc/auto.master; \
 echo -e "*\t-fstype=autofs,-Dhost=&\tfile:/etc/auto.cifs.sub" > /etc/auto.cifs; \
-echo -e "*\t-fstype=cifs,user=${user},pass=${pass},domain=${domain},uid=${uid},gid=${gid}\t://${host}/&" > /etc/auto.cifs.sub
+echo -e "*\t-fstype=cifs,user=${user},pass=${pass},domain=${domain},uid=${uid},gid=${gid}\t://\${host}/&" > /etc/auto.cifs.sub
 ```
 
 For background run of automount is used own entrypoint.sh
